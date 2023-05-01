@@ -5,21 +5,20 @@ import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import dagger.hilt.android.AndroidEntryPoint
 import fd.firad.geniuszone.R
 import fd.firad.geniuszone.databinding.ActivityMainBinding
-import fd.firad.geniuszone.repository.QuizRepository
 import fd.firad.geniuszone.utils.Utility
-import fd.firad.geniuszone.viewmodel.QuizViewFactory
 import fd.firad.geniuszone.viewmodel.QuizViewModel
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var viewModel: QuizViewModel
-    private lateinit var factory: QuizViewFactory
+    private val viewModel: QuizViewModel by viewModels()
     private lateinit var quizArrayList: ArrayList<fd.firad.geniuszone.model.Result>
     private lateinit var selectedAns: String
     private lateinit var modelQuiz: fd.firad.geniuszone.model.Result
@@ -41,9 +40,6 @@ class MainActivity : AppCompatActivity() {
         val isOnline = Utility.isOnline(this@MainActivity)
 
         if (isOnline) {
-            factory = QuizViewFactory(QuizRepository())
-            viewModel = ViewModelProvider(this@MainActivity, factory)[QuizViewModel::class.java]
-
             viewModel.quotes.observe(this@MainActivity, Observer {
                 quizArrayList.addAll(it.results)
                 shuffleArray()
@@ -141,6 +137,7 @@ class MainActivity : AppCompatActivity() {
                 binding.option3.text = modelQuiz.incorrect_answers[1]
                 binding.option4.text = modelQuiz.incorrect_answers[2]
             }
+
             2 -> {
                 binding.option2.text = modelQuiz.correct_answer
                 binding.option1.text = modelQuiz.incorrect_answers[0]
@@ -148,6 +145,7 @@ class MainActivity : AppCompatActivity() {
                 binding.option4.text = modelQuiz.incorrect_answers[2]
 
             }
+
             3 -> {
                 binding.option3.text = modelQuiz.correct_answer
                 binding.option2.text = modelQuiz.incorrect_answers[0]
@@ -155,6 +153,7 @@ class MainActivity : AppCompatActivity() {
                 binding.option4.text = modelQuiz.incorrect_answers[2]
 
             }
+
             4 -> {
                 binding.option4.text = modelQuiz.correct_answer
                 binding.option2.text = modelQuiz.incorrect_answers[0]
