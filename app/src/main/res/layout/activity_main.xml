@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F0F2F5"
+        android:orientation="vertical"
+        tools:context=".activity.MainActivity">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#FFFFFF"
+                app:cardCornerRadius="15dp">
+
+                <TextView
+                    android:id="@+id/question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardOption1"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/cardQuestion"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#FFFFFF"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/option1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/option1Check"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/cardQuestion"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/cardOption1"
+                android:scaleType="fitXY"
+                android:src="@drawable/check"
+                android:visibility="invisible" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardOption2"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/cardOption1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#FFFFFF"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/option2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/option2Check"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/cardOption1"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/cardOption2"
+                android:scaleType="fitXY"
+                android:src="@drawable/check"
+                android:visibility="invisible" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardOption3"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/cardOption2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#FFFFFF"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/option3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/option3Check"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/cardOption2"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/cardOption3"
+                android:scaleType="fitXY"
+                android:src="@drawable/check"
+                android:visibility="invisible" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardOption4"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/cardOption3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#FFFFFF"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/option4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/option4Check"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/cardOption3"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/cardOption4"
+                android:scaleType="fitXY"
+                android:src="@drawable/check"
+                android:visibility="invisible" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="15dp"
+                android:padding="15dp"
+                android:src="@drawable/next" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>
